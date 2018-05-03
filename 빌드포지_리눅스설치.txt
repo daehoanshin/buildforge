@@ -7,7 +7,6 @@ BuildForge
 	root 계정접속
 	yum install libcanberra-gtk2.i686
 	yum install libcanberra-devel.i686
-	
 
 LicenseServer 설치
 	installManager 64bit 설치
