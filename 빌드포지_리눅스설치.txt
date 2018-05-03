@@ -1,0 +1,31 @@
+
+BuildForge
+	installManager 32bit 설치
+	*참고 링크
+	https://www.linuxquestions.org/questions/linux-software-2/install-gtk-2-20-0-on-rhel6-2-a-4175505639/
+	https://www.linuxquestions.org/questions/linux-software-2/gtk-message-failed-to-load-module-canberra-gtk-module-936168/
+	root 계정접속
+	yum install libcanberra-gtk2.i686
+	yum install libcanberra-devel.i686
+	
+
+LicenseServer 설치
+	installManager 64bit 설치
+	사용자 계정접속
+	yum install xterm
+	yum install redhat-lsb-4.0-2.1.el6.i686
+
+ORACLE 11G R2 설치
+	CREATE TABLESPACE TS_BUILD_D01
+	DATAFILE '/oracle/oradata/TSMRDB/TS_BUILD_D01.DBF'
+	SIZE 1G AUTOEXTEND ON EXTENT MANAGEMENT LOCAL AUTOALLOCATE;
+
+	CREATE TEMPORARY TABLESPACE TS_BUILD_T01
+	TEMPFILE '/oracle/oradata/TSMRDB/TS_BUILD_T01.DBF'
+	SIZE 20M AUTOEXTEND ON EXTENT MANAGEMENT LOCAL UNIFORM SIZE 1M;
+
+	CREATE USER BUILD_USER IDENTIFIED BY Passw0rd DEFAULT TABLESPACE TS_BUILD_D01 QUOTA UNLIMITED ON TS_BUILD_D01 TEMPORARY TABLESPACE TS_BUILD_T01;
+	GRANT DBA TO BUILD_USER;
+
+실행경로
+	https://www.rhedev.com:8443/jas/AuthServlet?referer=http%3A%2F%2Frhedev.com%2F
