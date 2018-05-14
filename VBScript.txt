@@ -6,3 +6,4 @@ create_xml_files_list.vbs       cscript create_xml_files_list.vbs d:\vbDev\ga-wo
 make_each_copy_JCL_files.vbs    cscript make_each_copy_JCL_files.vbs D:\vbDev\ga-workspace LTI LTI
 make_wasadmin1_deploy_copy.vbs  cscript make_wasadmin1_deploy_copy.vbs D:\vbDev\ga-workspace LTI LTI 1
 make_input_xml.vbs              cscript make_input_xml.vbs d:\vbDev\ga-workspace LTI
+make_each_copy_web_class        cscript make_each_copy_web_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
