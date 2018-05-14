@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+  <HARDWARE>
+      <COMPUTER os="Windows XP" department="Human Resources">atl-ws-001</COMPUTER>
+      <COMPUTER os="Windows XP" department="Finance">atl-ws-002</COMPUTER>
+      <COMPUTER os="Windows Server 2003" department="IT">atl-fs-003</COMPUTER>
+      <COMPUTER os="Windows Vista" department="IT">atl-ws-004</COMPUTER>
+      <COMPUTER os="Windows Vista" department="Human Resources">atl-ws-005</COMPUTER>
+      <COMPUTER os="Windows Vista" department="Finance">atl-ws-006</COMPUTER>
+      <COMPUTER os="Windows XP" department="Sales">atl-ws-007</COMPUTER>
+      <COMPUTER os="Windows Server 2008" department="IT">atl-fs-008</COMPUTER>
+      <COMPUTER os="Windows XP" department="Human Resources">atl-ws-009</COMPUTER>
+      <COMPUTER os="Windows Vista" department="Sales">atl-ws-010</COMPUTER>
+  </HARDWARE>
