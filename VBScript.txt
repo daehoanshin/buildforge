@@ -2,8 +2,9 @@ FileSystemObject(FSO)의 모든 것
 http://dojeun.egloos.com/m/318097
 
 진행완료목록
-create_xml_files_list.vbs       cscript create_xml_files_list.vbs d:\vbDev\ga-workspac
-make_each_copy_JCL_files.vbs    cscript make_each_copy_JCL_files.vbs D:\vbDev\ga-workspace LTI LTI
-make_wasadmin1_deploy_copy.vbs  cscript make_wasadmin1_deploy_copy.vbs D:\vbDev\ga-workspace LTI LTI 1
-make_input_xml.vbs              cscript make_input_xml.vbs d:\vbDev\ga-workspace LTI
-make_each_copy_web_class        cscript make_each_copy_web_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
+create_xml_files_list.vbs                   cscript create_xml_files_list.vbs d:\vbDev\ga-workspac
+make_each_copy_JCL_files.vbs                cscript make_each_copy_JCL_files.vbs D:\vbDev\ga-workspace LTI LTI
+make_wasadmin1_deploy_copy.vbs              cscript make_wasadmin1_deploy_copy.vbs D:\vbDev\ga-workspace LTI LTI 1
+make_input_xml.vbs                          cscript make_input_xml.vbs d:\vbDev\ga-workspace LTI
+make_each_copy_web_class.vbs                cscript make_each_copy_web_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
+make_each_copy_static_web_contents_xml.vbs  cscript make_each_copy_static_web_contents_xml.vbs D:\vbDev\ga-workspace jsp.jsf LTI LTI LTI LTI LTI
