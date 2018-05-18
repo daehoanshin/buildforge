@@ -1,2 +1,23 @@
 FileSystemObject(FSO)의 모든 것
 http://dojeun.egloos.com/m/318097
+
+진행완료목록
+
+adjust_dev_deploy_list_xml.vbs              cscript adjust_dev_deploy_list_xml.vbs D:\vbDev\ga-workspace
+check_COM1_deploy.vbs                       cscript check_COM1_deploy.vbs D:\vbDev\ga-workspace
+create_xml_files_list.vbs                   cscript create_xml_files_list.vbs d:\vbDev\ga-workspace
+make_application_info_xml.vbs               cscript make_application_info_xml.vbs D:\vbDev\ga-workspace LTI LTI_TST_WEB WEB WEB LTI LTI
+make_each_copy_BAT_class.vbs                cscript make_each_copy_BAT_class.vbs D:\vbDev\ga-workspace LTI LTI
+make_each_copy_JCL_files.vbs                cscript make_each_copy_JCL_files.vbs D:\vbDev\ga-workspace LTI LTI
+make_each_copy_static_web_contents_xml.vbs  cscript make_each_copy_static_web_contents_xml.vbs D:\vbDev\ga-workspace jsp.jsf LTI LTI LTI LTI LTI
+make_each_copy_TST_class_scp                cscript make_each_copy_TST_class_scp.vbs D:\vbDev\ga-workspace LTI LTI LTI LTI LTI
+make_each_copy_web_class.vbs                cscript make_each_copy_web_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
+make_each_copy_ws_class.vbs                 cscript make_each_copy_ws_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
+make_input_xml.vbs                          cscript make_input_xml.vbs d:\vbDev\ga-workspace LTI
+make_wasadmin1_deploy_copy.vbs              cscript make_wasadmin1_deploy_copy.vbs D:\vbDev\ga-workspace LTI LTI 1
+create_xml_files_list.vbs                   cscript create_xml_files_list.vbs d:\vbDev\ga-workspac
+make_each_copy_JCL_files.vbs                cscript make_each_copy_JCL_files.vbs D:\vbDev\ga-workspace LTI LTI
+make_wasadmin1_deploy_copy.vbs              cscript make_wasadmin1_deploy_copy.vbs D:\vbDev\ga-workspace LTI LTI 1
+make_input_xml.vbs                          cscript make_input_xml.vbs d:\vbDev\ga-workspace LTI
+make_each_copy_web_class.vbs                cscript make_each_copy_web_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
+make_each_copy_static_web_contents_xml.vbs  cscript make_each_copy_static_web_contents_xml.vbs D:\vbDev\ga-workspace jsp.jsf LTI LTI LTI LTI LTI
