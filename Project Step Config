@@ -1,9 +1,10 @@
 * 제약 조건
   1. 제공된 소스 nxui 관련 xml file 등에 대한 Compile 작업 필요.
+     > Create batch file은          - check_COMPONENT_deploy.vbs
      > Configuration Compile Enable - make_dev_env_variable_files.vbs
      > Check Compile Target Files   -
      > Compile                      - Build Forge Project Steps.
-     > Deploy Files                 -
+     > Deploy Files                 - make_each_copy_XXX_XXX_XXX.vbs
 
 * make_dev_env_variable_files.vbs /* Configuration Compile Enable */
   $ Target의 Compile 여부를 설정하는 환경 파일 구성.
@@ -22,7 +23,7 @@
      > Deploy List에 nxui 항목이 존재하는 경우에는 Compile과 배포 작업 모두 진행해야 한다.
        - 해당 항목에 관련된 변수를 2개로 구분할지(Compile, Deploy) 하나의 변수로 통합하여 설정할지 결정(하나의 값으로 통합하여 사용해도 무방).
 
-* make_each_copy_PRJSVR_TAGETTYPE_scp.vbs /* Deploy Fiels */
+* make_each_copy_PRJSVR_TAGETTYPE_FILETYPE.vbs /* Deploy Files */
   $ Target의 Deploy Rule 구성.
   1. 배포 대상의 project name 을 참조.
   2. 배포 대상의 file extension(확장자)를 참조.
@@ -31,3 +32,10 @@
   3. file deploy command 구성은 하기와 같은 형태로 구성된다.
      > mkdir -p 'file deploy path'
      > scp 'xxx':'xxx' 'Src file path' 'Target file path'
+
+* check_COMPONENT_deploy.vbs /* Create batch file. */
+  $ 해당 batch file은 TFS 최신 소스로 update 하기위한 batch file 생성을 목적으로 한다.
+  1. file path / file name 입력.
+  2. file 구성 기준
+     > CompileSuccess 값이 Y인 경우
+     > Rule에 따른 승인 파일 Count.
