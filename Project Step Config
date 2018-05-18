@@ -2,7 +2,7 @@
   1. 제공된 소스 nxui 관련 xml file 등에 대한 Compile 작업 필요.
      > Create batch file은          - check_COMPONENT_deploy.vbs
      > Configuration Compile Enable - make_dev_env_variable_files.vbs
-     > Check Compile Target Files   -
+     > Check Compile Target Files   - Build Forge Project Step 내에서 If 절을 사용하지 않는지 확인 할 것 - check list 참조.
      > Compile                      - Build Forge Project Steps.
      > Deploy Files                 - make_each_copy_XXX_XXX_XXX.vbs
 
