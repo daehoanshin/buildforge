@@ -1,19 +1,19 @@
 nxui Compile 결과 저장 Directory 위치 확인.
- > 배포로직 비교 부족한 항목들 확인.
+ check > 배포로직 비교 부족한 항목들 확인.
    일부 항목의 경우 산출물 Directory 내에 존재하나 배포 로직 상에 존재하지 않음.
 nxui TFS get Data 구조 파악
  Check > Directory 구조
  Check > File 확장자
 Server 구성
- > DEV_BF, NG_BF 외 각 업무별 DEB / TST / PRD SVr
+ check > DEV_BF, NG_BF 외 각 업무별 DEB / TST / PRD SVr
 BF Job Directory 내 구성 파악
- > Directory 구조
- > 파일 구성
+ check > Directory 구조
+ check > 파일 구성
 추가 파일 체크
- > application_info.xml
- > make_each_copy_DEV_static_web.vbs (js, 를 사용하여 js 파일을 배포할 수 있도록 수정한 사항)
- > create_static_web.contents
- > deploy_list.xml
- > copy_TST_LTI_class
+ check > application_info.xml
+ check > make_each_copy_DEV_static_web.vbs (js, 를 사용하여 js 파일을 배포할 수 있도록 수정한 사항)
+ check > create_static_web.contents
+ check > deploy_list.xml
+ check > copy_TST_LTI_class
 Check Build Forge Project Step
  > Compile 대상 여부를 확인하는 Step.
