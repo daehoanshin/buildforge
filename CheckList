@@ -17,3 +17,17 @@ BF Job Directory 내 구성 파악
  check > copy_TST_LTI_class
 Check Build Forge Project Step
  > Compile 대상 여부를 확인하는 Step.
+
+2018-05-23
+  1. 개별파일 배포
+    - NXUI 빌드 step 추가.
+  2. 배포목록 xml 파일 생성 step
+    - 환경 변수 설정
+      - make_dev_env_variable_files.vbs 수정
+2018-05-24
+  1. 배포목록 xml 파일 생성
+    - 환경 변수 설정
+      - make_dev_env_variable_files.vbs 수정
+      - .bset env "NXUI_WEB_DEPLOY=`type......`" 추가
+  2. 개별파일 배포
+    - NXUI 배포 step 추가. > 추가 점검 필요.
