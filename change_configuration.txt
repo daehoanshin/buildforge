@@ -1,0 +1,7 @@
+1. 파일별 컴파일
+   Compile command 내부 요소 중 compile 대상 파일의 이름 및 경로는 deploy_list.xml 을 통해서 확보.
+   bat 파일로 Compile Command 구성.
+   bat 파일 실행.
+
+2. GA_Modify_Concept.vbs 의 형태로 로직 수정.
+   하나의 파일에서 모든 배포 작업을 수행 할 경우.
