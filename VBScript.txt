@@ -21,3 +21,7 @@ make_wasadmin1_deploy_copy.vbs              cscript make_wasadmin1_deploy_copy.v
 make_input_xml.vbs                          cscript make_input_xml.vbs d:\vbDev\ga-workspace LTI
 make_each_copy_web_class.vbs                cscript make_each_copy_web_class.vbs D:\vbDev\ga-workspace LTI LTI LTI
 make_each_copy_static_web_contents_xml.vbs  cscript make_each_copy_static_web_contents_xml.vbs D:\vbDev\ga-workspace jsp.jsf LTI LTI LTI LTI LTI
+
+
+# DEV-BF에서 개발서버 ANT SCP
+make_each_copy_nxui_contents                cscript make_each_copy_nxui_contents.vbs D:\vbDev\ga-workspace /webroot TCM
