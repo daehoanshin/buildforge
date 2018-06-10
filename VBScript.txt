@@ -24,4 +24,6 @@ make_each_copy_static_web_contents_xml.vbs  cscript make_each_copy_static_web_co
 
 
 # DEV-BF에서 개발서버 ANT SCP
-make_each_copy_nxui_contents                cscript make_each_copy_nxui_contents.vbs D:\vbDev\ga-workspace /webroot TCM
+make_each_copy_nxui_contents.vbs            cscript make_each_copy_nxui_contents.vbs D:\vbDev\ga-workspace\nxui /webroot TCM
+make_each_copy_TST_nxui_scp.vbs             cscript make_each_copy_TST_nxui_scp.vbs D:\vbDev\ga-workspace\nxui 10.10.20.21 TCM
+make_each_copy_PRD_nxui_scp.vbs             cscript make_each_copy_PRD_nxui_scp.vbs D:\vbDev\ga-workspace\nxui 10.10.30.21 TCM
