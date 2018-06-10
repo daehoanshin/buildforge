@@ -169,7 +169,7 @@ Sub subMakeDirFile
 
       '배포 금지 체크
       defenderResult = nxuiFilterRuleDefender(path, strFileEntension, "dinle/nxui")
-
+      '도메인 내역 체크
       domainResult = nxuiFilterRuleDomainCheck(path, strFileEntension)
 
       If(defenderResult <> "false" And domainResult) Then
@@ -182,7 +182,7 @@ Sub subMakeDirFile
     FBatFile.WriteLine "    </fileset>"
   End If
 
-  if(BIZ="TCM") Then
+  If(BIZ="TCM") Then
     'install_nexacro 관련
     isInit = 0
     For i = 0 To UBound(strArrayXml) - 1
@@ -220,8 +220,8 @@ Sub subMakeDirFile
         WScript.Echo ("path=" & path & " , strFileEntension=" & strFileEntension)
 
         'js 변환 체크
-        result = nxuiFilterRuleConvert(path, strFileEntension, "install_nexacro")
-        If(result = "false") Then
+        converResult = nxuiFilterRuleConvert(path, strFileEntension, "install_nexacro")
+        If(converResult = "false") Then
           Include_Name = Include_Name & "/" & strFileName
         Else
           If(Right(strFileName, 3) = ".js") Then
@@ -252,8 +252,7 @@ End Sub
 ' 배포 금지여부 체크
 Function nxuiFilterRuleDefender(deployPath, deployExtension, repoUrl)
   strType = "defender"
-  'repoUrl = "dinle/nxui_src"
-  'WScript.Echo "repoUrl=" & repoUrl
+
   Set objDomDeployList = CreateObject("Microsoft.XMLDOM")
   objDomDeployList.Load(CURRENT_DIRECTORY & "\nxui_filter_rule.xml")
 
@@ -264,7 +263,8 @@ Function nxuiFilterRuleDefender(deployPath, deployExtension, repoUrl)
       rulePath = childNode.Attributes.getNamedItem("path").Text
       'nxui_filter_rule.xml의 <convert extension= 값
       ruleExtension = childNode.Attributes.getNamedItem("extension").Text
-      If(InStr(deployPath, rulePath) = 1 And (deployExtension = ruleExtension)) Then
+
+      If(deployPath <> "" And rulePath <> "" And InStr(deployPath, rulePath) = 1 And (deployExtension = ruleExtension)) Then
         nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
       ElseIf(deployPath = "" And rulePath = "" And (deployExtension = ruleExtension)) Then
         nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
@@ -273,7 +273,7 @@ Function nxuiFilterRuleDefender(deployPath, deployExtension, repoUrl)
       ElseIf(InStr(deployPath, rulePath) = 1 And ruleExtension = "*") Then
         nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
       ElseIf(ruleExtension = "JSP" And (deployExtension = ruleExtension)) Then
-          nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
+        nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
       End If
     Next
   Next
@@ -295,14 +295,14 @@ Function nxuiFilterRuleConvert(deployPath, deployExtension, repoUrl)
       rulePath = childNode.Attributes.getNamedItem("path").Text
       'nxui_filter_rule.xml의 <convert extension= 값
       ruleExtension = childNode.Attributes.getNamedItem("extension").Text
-      If(InStr(deployPath, rulePath) = 1 And ruleExtension = "*") Then
+      If(deployPath <> "" And rulePath <> "" And InStr(deployPath, rulePath) = 1 And ruleExtension = "*") Then
         nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
       ElseIf(InStr(deployPath, rulePath) = 1 And (deployExtension = ruleExtension) And ruleExtension="HTML" ) Then
         nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
       ElseIf(deployPath = "" And rulePath = "" And (deployExtension = ruleExtension) And ruleExtension="HTML" ) Then
         nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
       ElseIf(rulePath = "" And ruleExtension = "*") Then
-          nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
+        nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
       End If
     Next
   Next
