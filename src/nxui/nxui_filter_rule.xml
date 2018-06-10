@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<config>
+	<!--<defender> 배포 금지여부 체크
+		path=경로, extension=확장자, useDeploy=배포여부(false 배포금지)
+	-->
+	<repository name='DINLE_UI_LIB/dinle/nxui' type='defender'>
+		<defender path='' extension='JSON' useDeploy='false'/>
+		<defender path='' extension='JS' useDeploy='false'/>
+		<defender path='/nexacro14lib' extension='JSON' useDeploy='false'/>
+		<defender path='/nexacro14lib' extension='INFO' useDeploy='false'/>
+		<defender path='/nexacro14lib/component/ComComp' extension='!JS' useDeploy='false'/>
+		<defender path='/nexacro14lib/framework' extension='!JS' useDeploy='false'/>
+		<defender path='/nexacro14lib/component/CompBase' extension='!JS' useDeploy='false'/>
+		<defender path='/nexacro14lib/component/DesignComp' extension='*' useDeploy='false'/>
+		<defender path='*' extension='JSP' useDeploy='false'/>
+	</repository>
+
+	<!-- <convert> nxui_src 빌드후 js추가 변환여부 체크
+		path=경로, extension=확장자, useConvert=js변환여부(false 변환안함)
+		-->
+	<repository name='DINLE_UI_LIB/dinle/nxui' type='convert'>
+		<convert path='/font' extension='*' useConvert='false'/>
+		<convert path='/images' extension='*' useConvert='false'/>
+		<convert path='/_theme_' extension='*' useConvert='false'/>
+		<convert path='/web' extension='JS' useConvert='false'/>
+		<convert path='/web' extension='HTML' useConvert='false'/>
+		<convert path='' extension='HTML' useConvert='false'/>
+	</repository>
+
+	<repository name='DINLE_UI_LIB/install_nexacro' type='convert'>
+		<convert path='' extension='*' useConvert='false'/>
+	</repository>
+
+	<!-- 미사용 -->
+	<repository name='DINLE_UI_LIB/dinle/tcm' type='defender'>
+		<defender path='/zcs' extension='*'/>
+	</repository>
+	<!-- 미사용 -->
+	<repository name='DINLE_UI_LIB/dinle' type='defender'>
+		<defender path='' extension='*' file='dinle_c_ci*' useDeploy='false'/>
+	</repository>
+</config>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<DeployList>
+	<File CompileSuccess="Y">
+		<RequestId>1</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>test.xfdl</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/lti/abc</Path>
+		<Extension>XFDL</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>2</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>US.xfdl</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/frame</Path>
+		<Extension>XFDL</Extension>
+	</File>
+	<File CompileSuccess="N">
+		<RequestId>3</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>UM.xfdl</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/tcm</Path>
+		<Extension>XFDL</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>4</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>UI2.gif</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/images</Path>
+		<Extension>GIF</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>5</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>font.ttf</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/font</Path>
+		<Extension>TTF</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>6</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>miplatform.xml</Name>
+		<Path>DINLE_UI_LIB/dinle/tcm/zcs</Path>
+		<Extension>XML</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>7</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>home.html</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src</Path>
+		<Extension>HTML</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>8</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>frame.json</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/nexacro14lib/framework</Path>
+		<Extension>JSON</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>9</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>start.json</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src</Path>
+		<Extension>JSON</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>10</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>gap.jsp</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/gap</Path>
+		<Extension>JSP</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>11</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>file.dll</Name>
+		<Path>DINLE_UI_LIB/install_nexacro</Path>
+		<Extension>DLL</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>12</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>ab9010.xfdl</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/ltl/bde/etf</Path>
+		<Extension>XFDL</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>13</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>install.exe</Name>
+		<Path>DINLE_UI_LIB/install_nexacro</Path>
+		<Extension>EXE</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>14</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>stylesheet.css.js</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/css</Path>
+		<Extension>JS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>15</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>dinle_c_ci_abcdef</Name>
+		<Path>DINLE_UI_LIB/dinle</Path>
+		<Extension>JS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>16</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>theme.css</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/_theme_</Path>
+		<Extension>CSS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>17</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>hello.html</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/web</Path>
+		<Extension>HTML</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>18</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>helloJs.js</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/web</Path>
+		<Extension>JS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>19</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>designframe.info</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/nexacro14lib/component/DesignComp</Path>
+		<Extension>INFO</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>20</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>compframe.json</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/nexacro14lib/component/CompBase</Path>
+		<Extension>JSON</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>21</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>baseframe.js</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/nexacro14lib/component/CompBase</Path>
+		<Extension>JS</Extension>
+	</File>
+</DeployList>
