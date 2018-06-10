@@ -156,8 +156,8 @@ Sub subMakeDirFile
       End If
       WScript.Echo ("path=" & path & " , strFileEntension=" & strFileEntension)
       'js 변환 체크
-      result = nxuiFilterRuleConvert(path, strFileEntension, "dinle/nxui")
-      If(result = "false") Then
+      converResult = nxuiFilterRuleConvert(path, strFileEntension, "dinle/nxui")
+      If(converResult = "false") Then
         Include_Name =  Include_Name & "/" & strFileName
       Else
         If(Right(strFileName, 3) = ".js") Then
@@ -167,11 +167,12 @@ Sub subMakeDirFile
         End If
       End If
 
-      result = true
       '배포 금지 체크
-      result = nxuiFilterRuleDefender(path, strFileEntension, "dinle/nxui")
+      defenderResult = nxuiFilterRuleDefender(path, strFileEntension, "dinle/nxui")
 
-      If(result <> "false") Then
+      domainResult = nxuiFilterRuleDomainCheck(path, strFileEntension)
+
+      If(defenderResult <> "false" And domainResult) Then
         FBatFile.WriteLine "      <include name=" & """" & Include_Name & """" & ">"
       End If
     End If
@@ -181,62 +182,65 @@ Sub subMakeDirFile
     FBatFile.WriteLine "    </fileset>"
   End If
 
-  'install_nexacro 관련
-  isInit = 0
-  For i = 0 To UBound(strArrayXml) - 1
+  if(BIZ="TCM") Then
+    'install_nexacro 관련
+    isInit = 0
+    For i = 0 To UBound(strArrayXml) - 1
 
-    'Project를 구한다.
-    iStartPoint = InStr(strArrayXml(i), STR_PRJ_START_TAG)
-    iEndPoint = InStr(strArrayXml(i), STR_PRJ_END_TAG)
-    strPrjName = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_PRJ_START_TAG), iEndPoint-iStartPoint-Len(STR_PRJ_START_TAG)))
+      'Project를 구한다.
+      iStartPoint = InStr(strArrayXml(i), STR_PRJ_START_TAG)
+      iEndPoint = InStr(strArrayXml(i), STR_PRJ_END_TAG)
+      strPrjName = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_PRJ_START_TAG), iEndPoint-iStartPoint-Len(STR_PRJ_START_TAG)))
 
-    'Path를 구한다.
-    iStartPoint = InStr(strArrayXml(i), STR_PATH_START_TAG)
-    iEndPoint = InStr(strArrayXml(i), STR_PATH_END_TAG)
-    strFilePath = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_PATH_START_TAG), iEndPoint-iStartPoint-Len(STR_PATH_START_TAG)))
+      'Path를 구한다.
+      iStartPoint = InStr(strArrayXml(i), STR_PATH_START_TAG)
+      iEndPoint = InStr(strArrayXml(i), STR_PATH_END_TAG)
+      strFilePath = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_PATH_START_TAG), iEndPoint-iStartPoint-Len(STR_PATH_START_TAG)))
 
-    '파일명을 구한다.
-    iStartPoint = InStr(strArrayXml(i), STR_NAME_START_TAG)
-    iEndPoint = InStr(strArrayXml(i), STR_NAME_END_TAG)
-    strFileName = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_NAME_START_TAG), iEndPoint-iStartPoint-Len(STR_NAME_START_TAG)))
+      '파일명을 구한다.
+      iStartPoint = InStr(strArrayXml(i), STR_NAME_START_TAG)
+      iEndPoint = InStr(strArrayXml(i), STR_NAME_END_TAG)
+      strFileName = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_NAME_START_TAG), iEndPoint-iStartPoint-Len(STR_NAME_START_TAG)))
 
-    '확장자를 구한다.
-    iStartPoint = InStr(strArrayXml(i), STR_EXTENSION_START_TAG)
-    iEndPoint = InStr(strArrayXml(i), STR_EXTENSION_END_TAG)
-    strFileEntension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
+      '확장자를 구한다.
+      iStartPoint = InStr(strArrayXml(i), STR_EXTENSION_START_TAG)
+      iEndPoint = InStr(strArrayXml(i), STR_EXTENSION_END_TAG)
+      strFileEntension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
 
-    InstallPath = "D:\BUILDFORGE_PROJECT\WORKSPACE_NEW\DSRV"
-    If (strPrjName="DINLE_UI_LIB") And InStr(strFilePath, "DINLE_UI_LIB/install_nexacro") = 1 Then
-      Include_Name = Replace(strFilePath, strPrjName & "/", "")
-      path = Replace(strFilePath, "DINLE_UI_LIB/install_nexacro", "")
+      InstallPath = "D:\BUILDFORGE_PROJECT\WORKSPACE_NEW\DSRV"
+      If (strPrjName="DINLE_UI_LIB") And InStr(strFilePath, "DINLE_UI_LIB/install_nexacro") = 1 Then
+        Include_Name = Replace(strFilePath, strPrjName & "/", "")
+        path = Replace(strFilePath, "DINLE_UI_LIB/install_nexacro", "")
 
-      If(isInit = 0) Then
-        FBatFile.WriteLine "    <fileset dir=" & """" & InstallPath & """" & ">"
-        isInit = 1
-      End If
+        If(isInit = 0) Then
+          FBatFile.WriteLine "    <fileset dir=" & """" & InstallPath & """" & ">"
+          isInit = 1
+        End If
 
-      WScript.Echo ("path=" & path & " , strFileEntension=" & strFileEntension)
+        WScript.Echo ("path=" & path & " , strFileEntension=" & strFileEntension)
 
-      'js 변환 체크
-      result = nxuiFilterRuleConvert(path, strFileEntension, "install_nexacro")
-      If(result = "false") Then
-        Include_Name = Include_Name & "/" & strFileName
-      Else
-        If(Right(strFileName, 3) = ".js") Then
+        'js 변환 체크
+        result = nxuiFilterRuleConvert(path, strFileEntension, "install_nexacro")
+        If(result = "false") Then
           Include_Name = Include_Name & "/" & strFileName
         Else
-          Include_Name = Include_Name & "/" & strFileName & ".js"
+          If(Right(strFileName, 3) = ".js") Then
+            Include_Name = Include_Name & "/" & strFileName
+          Else
+            Include_Name = Include_Name & "/" & strFileName & ".js"
+          End If
         End If
+
+        FBatFile.WriteLine "      <include name=" & """" & Include_Name & """" & ">"
       End If
+    Next
 
-      FBatFile.WriteLine "      <include name=" & """" & Include_Name & """" & ">"
+    If(isInit = 1) Then
+      FBatFile.WriteLine "    </fileset>"
     End If
-  Next
-  WScript.Echo "======================================================="
 
-  If(isInit = 1) Then
-    FBatFile.WriteLine "    </fileset>"
   End If
+  WScript.Echo "======================================================="
   FBatFile.WriteLine "  </scp>"
   FBatFile.WriteLine " </target>"
   FBatFile.WriteLine "</project>"
@@ -260,11 +264,13 @@ Function nxuiFilterRuleDefender(deployPath, deployExtension, repoUrl)
       rulePath = childNode.Attributes.getNamedItem("path").Text
       'nxui_filter_rule.xml의 <convert extension= 값
       ruleExtension = childNode.Attributes.getNamedItem("extension").Text
-      If((deployPath = rulePath) And (deployExtension = ruleExtension)) Then
+      If(InStr(deployPath, rulePath) = 1 And (deployExtension = ruleExtension)) Then
         nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
-      ElseIf((deployPath = rulePath) And ruleExtension = "!JS" And deployExtension <> "JS") Then
+      ElseIf(deployPath = "" And rulePath = "" And (deployExtension = ruleExtension)) Then
         nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
-      ElseIf((deployPath = rulePath) And ruleExtension = "*") Then
+      ElseIf(InStr(deployPath, rulePath) = 1 And ruleExtension = "!JS" And deployExtension <> "JS") Then
+        nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
+      ElseIf(InStr(deployPath, rulePath) = 1 And ruleExtension = "*") Then
         nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
       ElseIf(ruleExtension = "JSP" And (deployExtension = ruleExtension)) Then
           nxuiFilterRuleDefender = childNode.Attributes.getNamedItem("useDeploy").Text
@@ -289,12 +295,43 @@ Function nxuiFilterRuleConvert(deployPath, deployExtension, repoUrl)
       rulePath = childNode.Attributes.getNamedItem("path").Text
       'nxui_filter_rule.xml의 <convert extension= 값
       ruleExtension = childNode.Attributes.getNamedItem("extension").Text
-      If(deployPath = rulePath And ruleExtension = "*") Then
+      If(InStr(deployPath, rulePath) = 1 And ruleExtension = "*") Then
         nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
-      ElseIf((deployPath = rulePath) And (deployExtension = ruleExtension) And ruleExtension="HTML" ) Then
+      ElseIf(InStr(deployPath, rulePath) = 1 And (deployExtension = ruleExtension) And ruleExtension="HTML" ) Then
+        nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
+      ElseIf(deployPath = "" And rulePath = "" And (deployExtension = ruleExtension) And ruleExtension="HTML" ) Then
         nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
       ElseIf(rulePath = "" And ruleExtension = "*") Then
           nxuiFilterRuleConvert = childNode.Attributes.getNamedItem("useConvert").Text
+      End If
+    Next
+  Next
+
+  Set Nodes = Nothing
+
+End Function
+
+' nxui_filter_rule.xml을 로딩하여
+' BIZ의 업무 도메인에 맞는 내역 체크
+Function nxuiFilterRuleDomainCheck(deployPath, deployExtension)
+  strType = "pattern"
+  Set objDomDeployList = CreateObject("Microsoft.XMLDOM")
+  objDomDeployList.Load(CURRENT_DIRECTORY & "\nxui_filter_rule.xml")
+  Set Nodes = objDomDeployList.SelectNodes("//domain[@name='" & BIZ & "'][@type='" & strType & "']")
+  For Each repoNode in Nodes
+    For Each childNode in repoNode.childNodes
+      'nxui_filter_rule.xml의 <convert path= 값
+      rulePath = childNode.Attributes.getNamedItem("path").Text
+      'nxui_filter_rule.xml의 <convert extension= 값
+      ruleExtension = childNode.Attributes.getNamedItem("extension").Text
+      If(deployPath="" And rulePath="" And (deployExtension = ruleExtension)) Then
+        nxuiFilterRuleDomainCheck = true
+        Exit For
+      ElseIf(deployPath <> "" And rulePath <> "" And InStr(deployPath, rulePath)=1) Then
+        nxuiFilterRuleDomainCheck = true
+        Exit For
+      Else
+        nxuiFilterRuleDomainCheck = false
       End If
     Next
   Next
