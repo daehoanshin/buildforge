@@ -31,65 +31,65 @@
 	<repository name='DINLE_UI_LIB/install_nexacro' type='convert'>
 		<convert path='' extension='*' useConvert='false'/>
 	</repository>
-	
-	<domain name='ACT' type='defender'>
-		<pattern>/act/*.JS</pattern>
+
+	<!-- 업무에서 배포되어야 하는 리스트 -->
+	<domain name='ACT' type='pattern' desc=''>
+		<pattern path='/act' extension='JS'/>
 	</domain>
-	<domain name='ATS' type='defender'>
-		<pattern>/ats/*.JS</pattern>
+	<domain name='ATS' type='pattern'>
+		<pattern path='/ats' extension='JS'/>
 	</domain>
-	<domain name='CUS' type='defender'>
-		<pattern>/cus/*.JS</pattern>
+	<domain name='CUS' type='pattern'>
+		<pattern path='/cus' extension='JS'/>
 	</domain>
-	<domain name='GNI' type='defender'>
-		<pattern>/gni/*.JS</pattern>
+	<domain name='GNI' type='pattern'>
+		<pattern path='/gni' extension='JS'/>
 	</domain>
-	<domain name='LTI' type='defender'>
-		<pattern>/lti/*.JS</pattern>
+	<domain name='LTI' type='pattern'>
+		<pattern path='/lti' extension='JS'/>
 	</domain>
-	<domain name='MTI' type='defender'>
-		<pattern>/mti/*.JS</pattern>
+	<domain name='MTI' type='pattern'>
+		<pattern path='/mti' extension='JS'/>
 	</domain>
-	<domain name='ONC' type='defender'>
-		<pattern>/onc/*.JS</pattern>
+	<domain name='ONC' type='pattern'>
+		<pattern path='/onc' extension='JS'/>
 	</domain>
-	<domain name='PDF' type='defender'>
-		<pattern>/pdf/*.JS</pattern>
+	<domain name='PDF' type='pattern'>
+		<pattern path='/pdf' extension='JS'/>
 	</domain>
-	<domain name='SAL' type='defender'>
-		<pattern>/sal/*.JS</pattern>
+	<domain name='SAL' type='pattern'>
+		<pattern path='/sal' extension='JS'/>
 	</domain>
-	<domain name='STA' type='defender'>
-		<pattern>/sta/*.JS</pattern>
+	<domain name='STA' type='pattern'>
+		<pattern path='/sta' extension='JS'/>
 	</domain>
-	<domain name='TCM' type='defender'>
-		<pattern>/*.HTML</pattern>
-		<pattern>/*.JS</pattern>
-		<pattern>/_theme_/*.JS</pattern>
-		<pattern>/_theme_/*.PNG</pattern>
-		<pattern>/bizComm/*.JS</pattern>
-		<pattern>/comm/*.JS</pattern>
-		<pattern>/css/*.JS</pattern>
-		<pattern>/font/*.CSS</pattern>
-		<pattern>/font/*.TTF</pattern>
-		<pattern>/frame/*.JS</pattern>
-		<pattern>/guide/*.JS</pattern>
-		<pattern>/images/*.PNG</pattern>
-		<pattern>/images/*.GIF</pattern>
-		<pattern>/images/*.JPG</pattern>
-		<pattern>/images/*.JPEG</pattern>
-		<pattern>/lib/*.JS</pattern>
-		<pattern>/main/*.JS</pattern>
-		<pattern>/nexacro14lib/*.JS</pattern>
-		<pattern>/sample/*.JS</pattern>
-		<pattern>/template/*.JS</pattern>
-		<pattern>/template/*.GIF</pattern>
-		<pattern>/template/*.GIF</pattern>
-		<pattern>/web/*.JS</pattern>
-		<pattern>/web/*.HTML</pattern>
+	<domain name='TCM' type='pattern'>
+		<pattern path='' extension='HTML'/>
+		<pattern path='' extension='JS'/>
+		<pattern path='/_theme_' extension='JS'/>
+		<pattern path='/_theme_' extension='PNG'/>
+		<pattern path='/bizComm' extension='JS'/>
+		<pattern path='/comm' extension='JS'/>
+		<pattern path='/css' extension='JS'/>
+		<pattern path='/font' extension='CSS'/>
+		<pattern path='/font' extension='TTF'/>
+		<pattern path='/frame' extension='JS'/>
+		<pattern path='/guide' extension='JS'/>
+		<pattern path='/images' extension='PNG'/>
+		<pattern path='/images' extension='GIF'/>
+		<pattern path='/images' extension='JPG'/>
+		<pattern path='/images' extension='JPEG'/>
+		<pattern path='/lib' extension='JS'/>
+		<pattern path='/main' extension='JS'/>
+		<pattern path='/nexacro14lib' extension='JS'/>
+		<pattern path='/sample' extension='JS'/>
+		<pattern path='/template' extension='JS'/>
+		<pattern path='/template' extension='GIF'/>
+		<pattern path='/web' extension='JS'/>
+		<pattern path='/web' extension='HTML'/>
 	</domain>
 
-	<domain name='UWT' type='defender'>
+	<domain name='UWT' type='pattern'>
 		<pattern>/uwt/*.JS</pattern>
 	</domain>
 
