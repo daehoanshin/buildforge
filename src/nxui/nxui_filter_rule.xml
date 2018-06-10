@@ -15,8 +15,8 @@
 		<defender path='*' extension='JSP' useDeploy='false'/>
 	</repository>
 
-	<!-- <convert> nxui_src 빌드후 js추가 변환여부 체크
-		path=경로, extension=확장자, useConvert=js변환여부(false 변환안함)
+	<!-- <convert> nxui_src 빌드후 JS추가 변환여부 체크
+		path=경로, extension=확장자, useConvert=JS변환여부(false 변환안함)
 		-->
 	<repository name='DINLE_UI_LIB/dinle/nxui' type='convert'>
 		<convert path='/font' extension='*' useConvert='false'/>
@@ -27,9 +27,71 @@
 		<convert path='' extension='HTML' useConvert='false'/>
 	</repository>
 
+	<!-- 넥사크로 설치 파일  JS추가 변환여부 체크 -->
 	<repository name='DINLE_UI_LIB/install_nexacro' type='convert'>
 		<convert path='' extension='*' useConvert='false'/>
 	</repository>
+	
+	<domain name='ACT' type='defender'>
+		<pattern>/act/*.JS</pattern>
+	</domain>
+	<domain name='ATS' type='defender'>
+		<pattern>/ats/*.JS</pattern>
+	</domain>
+	<domain name='CUS' type='defender'>
+		<pattern>/cus/*.JS</pattern>
+	</domain>
+	<domain name='GNI' type='defender'>
+		<pattern>/gni/*.JS</pattern>
+	</domain>
+	<domain name='LTI' type='defender'>
+		<pattern>/lti/*.JS</pattern>
+	</domain>
+	<domain name='MTI' type='defender'>
+		<pattern>/mti/*.JS</pattern>
+	</domain>
+	<domain name='ONC' type='defender'>
+		<pattern>/onc/*.JS</pattern>
+	</domain>
+	<domain name='PDF' type='defender'>
+		<pattern>/pdf/*.JS</pattern>
+	</domain>
+	<domain name='SAL' type='defender'>
+		<pattern>/sal/*.JS</pattern>
+	</domain>
+	<domain name='STA' type='defender'>
+		<pattern>/sta/*.JS</pattern>
+	</domain>
+	<domain name='TCM' type='defender'>
+		<pattern>/*.HTML</pattern>
+		<pattern>/*.JS</pattern>
+		<pattern>/_theme_/*.JS</pattern>
+		<pattern>/_theme_/*.PNG</pattern>
+		<pattern>/bizComm/*.JS</pattern>
+		<pattern>/comm/*.JS</pattern>
+		<pattern>/css/*.JS</pattern>
+		<pattern>/font/*.CSS</pattern>
+		<pattern>/font/*.TTF</pattern>
+		<pattern>/frame/*.JS</pattern>
+		<pattern>/guide/*.JS</pattern>
+		<pattern>/images/*.PNG</pattern>
+		<pattern>/images/*.GIF</pattern>
+		<pattern>/images/*.JPG</pattern>
+		<pattern>/images/*.JPEG</pattern>
+		<pattern>/lib/*.JS</pattern>
+		<pattern>/main/*.JS</pattern>
+		<pattern>/nexacro14lib/*.JS</pattern>
+		<pattern>/sample/*.JS</pattern>
+		<pattern>/template/*.JS</pattern>
+		<pattern>/template/*.GIF</pattern>
+		<pattern>/template/*.GIF</pattern>
+		<pattern>/web/*.JS</pattern>
+		<pattern>/web/*.HTML</pattern>
+	</domain>
+
+	<domain name='UWT' type='defender'>
+		<pattern>/uwt/*.JS</pattern>
+	</domain>
 
 	<!-- 미사용 -->
 	<repository name='DINLE_UI_LIB/dinle/tcm' type='defender'>
