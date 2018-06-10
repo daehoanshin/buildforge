@@ -32,7 +32,7 @@
 		<RequestId>5</RequestId>
 		<Project>DINLE_UI_LIB</Project>
 		<Name>font.ttf</Name>
-		<Path>DINLE_UI_LIB/dinle/nxui_src/font</Path>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/font/eee</Path>
 		<Extension>TTF</Extension>
 	</File>
 	<File CompileSuccess="Y">
@@ -95,7 +95,7 @@
 		<RequestId>14</RequestId>
 		<Project>DINLE_UI_LIB</Project>
 		<Name>stylesheet.css.js</Name>
-		<Path>DINLE_UI_LIB/dinle/nxui_src/css</Path>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/css/ats</Path>
 		<Extension>JS</Extension>
 	</File>
 	<File CompileSuccess="Y">
@@ -146,5 +146,33 @@
 		<Name>baseframe.js</Name>
 		<Path>DINLE_UI_LIB/dinle/nxui_src/nexacro14lib/component/CompBase</Path>
 		<Extension>JS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>22</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>atc.js</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/atc</Path>
+		<Extension>JS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>23</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>atc.xfdl.js</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/atc/test/bac</Path>
+		<Extension>JS</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>24</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>compframe1.json</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/nexacro14lib/component/CompBase/abc</Path>
+		<Extension>JSON</Extension>
+	</File>
+	<File CompileSuccess="Y">
+		<RequestId>25</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>stylesheet1.xfdl</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/onc/dev</Path>
+		<Extension>XFDL</Extension>
 	</File>
 </DeployList>
