@@ -25,6 +25,7 @@
 		<convert path='/web' extension='JS' useConvert='false'/>
 		<convert path='/web' extension='HTML' useConvert='false'/>
 		<convert path='' extension='HTML' useConvert='false'/>
+		<convert path='' extension='JSON' useConvert='false'/>
 	</repository>
 
 	<!-- 넥사크로 설치 파일  JS추가 변환여부 체크 -->
@@ -32,42 +33,54 @@
 		<convert path='' extension='*' useConvert='false'/>
 	</repository>
 
-	<!-- 업무에서 배포되어야 하는 리스트 -->
+	<!-- BIZ의 업무 도메인에 맞는 내역 리스트 -->
 	<domain name='ACT' type='pattern' desc=''>
 		<pattern path='/act' extension='JS'/>
+		<pattern path='/act' extension='XFDL'/>
 	</domain>
 	<domain name='ATS' type='pattern'>
 		<pattern path='/ats' extension='JS'/>
+		<pattern path='/ats' extension='XFDL'/>
 	</domain>
 	<domain name='CUS' type='pattern'>
 		<pattern path='/cus' extension='JS'/>
+		<pattern path='/cus' extension='XFDL'/>
 	</domain>
 	<domain name='GNI' type='pattern'>
 		<pattern path='/gni' extension='JS'/>
+		<pattern path='/gni' extension='XFDL'/>
 	</domain>
 	<domain name='LTI' type='pattern'>
 		<pattern path='/lti' extension='JS'/>
+		<pattern path='/lti' extension='XFDL'/>
 	</domain>
 	<domain name='MTI' type='pattern'>
 		<pattern path='/mti' extension='JS'/>
+		<pattern path='/mti' extension='XFDL'/>
 	</domain>
 	<domain name='ONC' type='pattern'>
 		<pattern path='/onc' extension='JS'/>
+		<pattern path='/onc' extension='XFDL'/>
 	</domain>
 	<domain name='PDF' type='pattern'>
 		<pattern path='/pdf' extension='JS'/>
+		<pattern path='/pdf' extension='XFDL'/>
 	</domain>
 	<domain name='SAL' type='pattern'>
 		<pattern path='/sal' extension='JS'/>
+		<pattern path='/sal' extension='XFDL'/>
 	</domain>
 	<domain name='STA' type='pattern'>
 		<pattern path='/sta' extension='JS'/>
+		<pattern path='/sta' extension='XFDL'/>
 	</domain>
 	<domain name='TCM' type='pattern'>
 		<pattern path='' extension='HTML'/>
 		<pattern path='' extension='JS'/>
+		<pattern path='' extension='XFDL'/>
 		<pattern path='/_theme_' extension='JS'/>
 		<pattern path='/_theme_' extension='PNG'/>
+		<pattern path='/_theme_' extension='CSS'/>
 		<pattern path='/bizComm' extension='JS'/>
 		<pattern path='/comm' extension='JS'/>
 		<pattern path='/css' extension='JS'/>
@@ -88,9 +101,9 @@
 		<pattern path='/web' extension='JS'/>
 		<pattern path='/web' extension='HTML'/>
 	</domain>
-
 	<domain name='UWT' type='pattern'>
-		<pattern>/uwt/*.JS</pattern>
+		<pattern path='/uwt' extension='JS'/>
+		<pattern path='/uwt' extension='XFDL'/>
 	</domain>
 
 	<!-- 미사용 -->
