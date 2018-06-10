@@ -175,4 +175,11 @@
 		<Path>DINLE_UI_LIB/dinle/nxui_src/onc/dev</Path>
 		<Extension>XFDL</Extension>
 	</File>
+	<File CompileSuccess="Y">
+		<RequestId>26</RequestId>
+		<Project>DINLE_UI_LIB</Project>
+		<Name>ats1.xfdl</Name>
+		<Path>DINLE_UI_LIB/dinle/nxui_src/ats/dev</Path>
+		<Extension>XFDL</Extension>
+	</File>
 </DeployList>
