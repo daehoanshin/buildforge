@@ -20,6 +20,7 @@
 		-->
 	<repository name='DINLE_UI_LIB/dinle/nxui' type='convert'>
 		<convert path='/font' extension='*' useConvert='false'/>
+		<convert path='/nexacro14lib' extension='*' useConvert='false'/>
 		<convert path='/images' extension='*' useConvert='false'/>
 		<convert path='/_theme_' extension='*' useConvert='false'/>
 		<convert path='/web' extension='JS' useConvert='false'/>
