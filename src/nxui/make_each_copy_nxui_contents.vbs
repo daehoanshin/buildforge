@@ -65,7 +65,7 @@ End If
 
 '원하는 결과 파일을 만든다.
 Call subMakeDirFile
-'Call nxuiFilter ("strPrjName", "strFilePath", "strFileName", "strFileEntension")
+'Call nxuiFilter ("strPrjName", "strFilePath", "strFileName", "strFileExtension")
 '프로그램 종료 처리
 Set FCurDir = Nothing
 Set FSO = Nothing
@@ -142,7 +142,7 @@ Sub subMakeDirFile
     '확장자를 구한다.
     iStartPoint = InStr(strArrayXml(i), STR_EXTENSION_START_TAG)
     iEndPoint = InStr(strArrayXml(i), STR_EXTENSION_END_TAG)
-    strFileEntension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
+    strFileExtension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
 
     strFilePath = Replace(strFilePath, "DINLE_UI_LIB/dinle/nxui_src", "DINLE_UI_LIB/dinle/nxui")
 
@@ -154,9 +154,9 @@ Sub subMakeDirFile
         FBatFile.WriteLine "    <fileset dir=" & """" & WORKSPACE & """" & ">"
         isInit = 1
       End If
-      WScript.Echo ("path=" & path & " , strFileEntension=" & strFileEntension)
+      WScript.Echo ("path=" & path & " , strFileExtension=" & strFileExtension)
       'js 변환 체크
-      converResult = nxuiFilterRuleConvert(path, strFileEntension, "dinle/nxui")
+      converResult = nxuiFilterRuleConvert(path, strFileExtension, "dinle/nxui")
       If(converResult = "false") Then
         Include_Name =  Include_Name & "/" & strFileName
       Else
@@ -168,11 +168,11 @@ Sub subMakeDirFile
       End If
 
       '배포 금지 체크
-      defenderResult = nxuiFilterRuleDefender(path, strFileEntension, "dinle/nxui")
+      defenderResult = nxuiFilterRuleDefender(path, strFileExtension, "dinle/nxui")
       '도메인 내역 체크
-      domainResult = nxuiFilterRuleDomainCheck(path, strFileEntension)
+      domainResult = nxuiFilterRuleDomainCheck(path, strFileExtension)
 
-      If(defenderResult <> "false" And domainResult) Then
+      If(defenderResult <> "false" And domainResult = true) Then
         FBatFile.WriteLine "      <include name=" & """" & Include_Name & """" & ">"
       End If
     End If
@@ -205,7 +205,7 @@ Sub subMakeDirFile
       '확장자를 구한다.
       iStartPoint = InStr(strArrayXml(i), STR_EXTENSION_START_TAG)
       iEndPoint = InStr(strArrayXml(i), STR_EXTENSION_END_TAG)
-      strFileEntension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
+      strFileExtension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
 
       InstallPath = "D:\BUILDFORGE_PROJECT\WORKSPACE_NEW\DSRV"
       If (strPrjName="DINLE_UI_LIB") And InStr(strFilePath, "DINLE_UI_LIB/install_nexacro") = 1 Then
@@ -217,10 +217,10 @@ Sub subMakeDirFile
           isInit = 1
         End If
 
-        WScript.Echo ("path=" & path & " , strFileEntension=" & strFileEntension)
+        WScript.Echo ("path=" & path & " , strFileExtension=" & strFileExtension)
 
         'js 변환 체크
-        converResult = nxuiFilterRuleConvert(path, strFileEntension, "install_nexacro")
+        converResult = nxuiFilterRuleConvert(path, strFileExtension, "install_nexacro")
         If(converResult = "false") Then
           Include_Name = Include_Name & "/" & strFileName
         Else

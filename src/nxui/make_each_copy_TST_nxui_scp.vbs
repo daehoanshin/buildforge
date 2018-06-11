@@ -123,7 +123,7 @@ Sub subMakeDirFile
     '확장자를 구한다.
     iStartPoint = InStr(strArrayXml(i), STR_EXTENSION_START_TAG)
     iEndPoint = InStr(strArrayXml(i), STR_EXTENSION_END_TAG)
-    strFileEntension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
+    strFileExtension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
 
     strFilePath = Replace(strFilePath, "DINLE_UI_LIB/dinle/nxui_src", "DINLE_UI_LIB/dinle/nxui")
 
@@ -134,7 +134,7 @@ Sub subMakeDirFile
       Wscript.Echo "path=" & path
 
       'js 변환 체크
-      converResult = nxuiFilterRuleConvert(path, strFileEntension, "dinle/nxui")
+      converResult = nxuiFilterRuleConvert(path, strFileExtension, "dinle/nxui")
       If(converResult = "false") Then
         Include_Name = Include_Name & "/" & strFileName
       Else
@@ -146,11 +146,11 @@ Sub subMakeDirFile
       End If
 
       '배포 금지 체크
-      defenderResult = nxuiFilterRuleDefender(path, strFileEntension, "dinle/nxui")
+      defenderResult = nxuiFilterRuleDefender(path, strFileExtension, "dinle/nxui")
       'BIZ에 맞는 도메인의 내역 찾기
-      domainResult = nxuiFilterRuleDomainCheck(path, strFileEntension)
+      domainResult = nxuiFilterRuleDomainCheck(path, strFileExtension)
 
-      If(defenderResult <> "false" And domainResult) Then
+      If(defenderResult <> "false" And domainResult = true) Then
         FBatFile.WriteLine "echo " & " mkdir -p " & WebRootPath & Include_Name
         FBatFile.WriteLine " mkdir -p "& WebRootPath & Include_Name
         FBatFile.WriteLine  "echo " & " scp " & DEV_HOST_IP & ":" & """" & "'" & _
@@ -182,7 +182,7 @@ Sub subMakeDirFile
       '확장자를 구한다.
       iStartPoint = InStr(strArrayXml(i), STR_EXTENSION_START_TAG)
       iEndPoint = InStr(strArrayXml(i), STR_EXTENSION_END_TAG)
-      strFileEntension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
+      strFileExtension = Trim(Mid(strArrayXml(i), iStartPoint + Len(STR_EXTENSION_START_TAG), iEndPoint-iStartPoint-Len(STR_EXTENSION_START_TAG)))
 
       'strFilePath = Replace(strFilePath, "DINLE_UI_LIB/dinle/nxui_src", "DINLE_UI_LIB/dinle/nxui")
 
@@ -193,7 +193,7 @@ Sub subMakeDirFile
         Wscript.Echo "path=" & path
 
         'js 변환 체크
-        converResult = nxuiFilterRuleConvert(path, strFileEntension, "install_nexacro")
+        converResult = nxuiFilterRuleConvert(path, strFileExtension, "install_nexacro")
         If(converResult = "false") Then
           Include_Name = Include_Name & "/" & strFileName
         Else
