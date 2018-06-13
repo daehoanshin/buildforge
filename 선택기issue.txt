@@ -1,5 +1,5 @@
 1)선택기를 찾을수 없을 수 없습니다.
   (다시 재시도시) network connect, db connection pool 초과
 2)다른 선택기 연결 시도 문제. (8.0.3 fix) dot bset selector 인라인 안에서
-  ga장기설계
+  ga장기설계 -> 타팀에서 라이브러리 실행으로 문제 발생(해결됨)
 3) Agent connection failed
