@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="euc-kr"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<!--<defender> 배포 금지여부 체크
 		path=경로, extension=확장자, useDeploy=배포여부(false 배포금지)
