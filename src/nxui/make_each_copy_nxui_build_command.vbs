@@ -1,20 +1,4 @@
-'******************************************************************************************************************
-'기능
-' -deploy_list.xml 을 참조하여 dev-bf에서 넥사크로소스 generator 하여
-' 컴파일 output을 파일을 바탕으로 개발계 webroot로 배포하는 ant script 생성
-'
-' 2018-06-14 넥사크로 이행용
 
-' ant script 내역은 nxui_filter_rule.xml 을 기반으로 하는 배포 룰을 이용하여 목록 만듬
-' 배포룰 메소드 nxuiFilterRuleDefender(배포체크), nxuiFilterRuleConvert(js추가체크)
-
-'CURRENT_DIRECTORY = "D:\BUILDFORGE_PROJECT\AGENT\T.LTI-TST\LTI-TST_370" 작업디렉토리
-'WORKSPACE = "D:\BUILDFORGE_PROJECT\WORKSPACE_NEW\TCM\nexacro" 넥사크로 빌드경로
-'BIZ = "TCM" 업무사이트
-
-' local test용
-' cscript make_each_copy_nxui_contents.vbs D:\vbDev\ga-workspace\nxui D:\BUILDFORGE_PROJECT\WORKSPACE_NEW\TCM\nexacro TCM
-'******************************************************************************************************************
 CURRENT_DIRECTORY = WScript.Arguments(0)
 WORKSPACE = WScript.Arguments(1)
 BIZ = WScript.Arguments(2)
