@@ -1,0 +1,1 @@
+ find . -type f -name "localhost*" -mmin -10 -exec cat {} \;
